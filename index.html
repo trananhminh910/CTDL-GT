@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nhóm 4 CTDL&GT</title>
+	<meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	 <style>
+	 	* {
+	 		margin:0;
+	 		padding: 0;
+	 		box-sizing: border-box;
+	 		font-family: arial, sans-serif;
+	 	}
+	 	header {
+	 		display: flex;
+	 		flex-flow: row wrap
+	 	}
+	 	header .logo {
+	 		margin-left:10%;
+
+	 	}
+	 	.team {
+	 		font-size: 2.5em;
+	 		line-height:2em;
+	 		padding-left: 30px;
+	 		color:#0000cc;
+	 		text-shadow: 1px 1px #D3D9F9;
+	 	}
+		
+		nav.horizontal {
+			background-color: #ffc107;
+
+		}
+		nav.vertical {
+			position: fixed;
+			height: 100%;
+			background-color: black;
+			overflow: auto;
+		}
+		nav.vertical li {
+			padding: 6px;
+			list-style: none;
+		}
+		nav.vertical a {
+			text-decoration: none;
+		}
+		nav.vertical span {
+			color: white;
+			position: absolute;
+			right: 5px;
+			font-size: 2em;
+			top: 30%;
+		}
+		nav.vertical span.icon-left {
+			display: block;
+			cursor: pointer;
+			background-color: black;
+
+		}
+		span.icon-right {
+			display: none;
+			font-size: 2em;
+			cursor: pointer;
+			position: fixed;
+			left: 5px;
+			font-size: 2em;
+			top: 50%;
+		}
+		span.icon-left:hover, span.icon-right:hover {
+			color: #ffc107;
+		}
+		.list-child {
+			padding: 20px;		
+		}
+		.image {
+		}
+		.wrapper {
+			display: flex;
+			flex-flow: column wrap;
+		}
+		.content {
+			/*border:1px solid black;*/
+			margin-left: 20%;	
+			
+		}
+		.members {
+			display:  flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		.card {
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+		.card-img-top:hover {
+			opacity: 0.6;
+		}
+		.member-more {
+			position: fixed;	
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			opacity: 1;
+			background-color: #383535;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			align-items: center;
+			display: none;
+			-webkit-animation-name: zoom;
+			 -webkit-animation-duration: 0.6s;
+			 animation-name: zoom;
+			 animation-duration: 0.6s;
+		}
+		@-webkit-keyframes zoom {
+		  from {-webkit-transform:scale(0)} 
+		  to {-webkit-transform:scale(1)}
+		}
+
+		@keyframes zoom {
+		  from {transform:scale(0)} 
+		  to {transform:scale(1)}
+		}
+		.frame-member-more {
+			background-color: #eee;
+			height: 70%;
+		}
+		.frame-image-member-more {
+			height: 60%;
+			margin:0 auto;
+			margin-top: 5px;
+		}
+		.frame-image-member-more>img {
+			height: 100%;
+		}
+		.close-button {
+			font-size: 2.5em;
+			position: absolute;
+			right: 15px;
+			top: 3px;
+			cursor: pointer;
+		}
+
+		.close-button:hover {
+			color: red;
+		}
+		.profile {
+			font-size: 1.2em;
+			cursor: pointer;
+		}
+		.parent-link {
+			border-left: 5px solid #ffc107;
+			padding-left: 15px;
+			color: white;
+		}
+		.child-link {
+			border-left: 5px solid #3DB23D;
+			padding-left: 15px;
+			margin-left: 15px;
+			color: white;
+			font-size: 1em;
+		}
+		.nav-item,.fa-home {
+			background-color: #ffc107;
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		.nav-item {
+			border-right: 1px solid black;
+			padding:0 10px;
+		}
+		.nav-item:hover {
+			text-decoration: underline;
+		}
+		.list-ver, 
+		.list-child {
+			background-color: black;
+			color: black;		
+		}
+		.list-child {
+			padding: 0;
+		}
+		li>a:hover {
+			color:#ffc107;
+			text-decoration: underline;
+			transition: all 0.3s;
+		}
+		.fa-caret-square-up {
+			position: fixed;
+			right: 15px;
+			bottom: 70px;
+			font-size: 3em;
+			cursor: pointer;
+		}
+		.fa-caret-square-up:hover {
+			transition: all 0.5s;
+			opacity: .7;
+		}
+		.bolder {
+			font-weight: bolder;
+		}
+		@media only screen and (max-width: 1230px) {
+			.team {
+				font-size: 2em;
+				padding-left: 50px;
+			}
+		}
+		@media only screen and (max-width: 1090px) {
+			.team {
+				font-size: 1.5em;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.logo {
+				display: none;
+			}
+			.vertical {
+				display: none;
+			}
+			.icon-right {
+				display: none;
+			}
+			.content {
+				position: absolute;
+				left: -7%;
+			}	
+		}
+		@media only screen and (max-width: 690px) {
+			.nav-horizontal {
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: center;
+			}
+			
+			.frame-image-member-more>img {
+				display: none;
+			}
+
+			.nav-item {
+				border: none;
+			}
+		}
+		@media only screen and (max-width: 450px) {
+			.team {
+				font-size: .7em;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.logo {
+				display: none;
+			}
+		}
+		/*table {
+			background-color: white;
+			color: white;
+		}*/
+		.to-inline {
+			display: inline;
+		}
+		.code-container {
+			border:5px double #928B8B;
+		}
+		.code {
+			font-size: 1em;
+			margin-left: 10px;
+			padding: 5px;
+		}
+
+		/*slide show Phan cong & thuc hien*/
+		.slide-show-container {
+			  position: relative;
+			}
+
+			/* Hide the images by default */
+			.mySlides {
+			  display: none;
+			}
+
+			/* Add a pointer when hovering over the thumbnail images */
+			.cursor {
+			  cursor: pointer;
+			}
+
+			/* Next & previous buttons */
+			.prev,
+			.next {
+			  cursor: pointer;
+			  position: absolute;
+			  top: 60%;
+			  width: auto;
+			  padding: 16px;
+			  margin-top: -50px;
+			  color: white;
+			  font-weight: bold;
+			  font-size: 20px;
+			  border-radius: 0 3px 3px 0;
+			  user-select: none;
+			  -webkit-user-select: none;
+			}
+
+			/* Position the "next button" to the right */
+			.next {
+			  right: 0;
+			  border-radius: 3px 0 0 3px;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover,
+			.next:hover {
+			  background-color: rgba(0, 0, 0, 0.8);
+			}
+
+			/* Number text (1/3 etc) */
+			.numbertext {
+			  color: #f2f2f2;
+			  font-size: 12px;
+			  padding: 8px 12px;
+			  position: absolute;
+			  top: 0;
+			}
+
+			/* Container for image text */
+			.caption-container {
+			  text-align: center;
+			  background-color: #222;
+			  padding: 2px 16px;
+			  color: white;
+			}
+
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Six columns side by side */
+			.column {
+			  float: left;
+			  width: 16.66%;
+			}
+
+			/* Add a transparency effect for thumnbail images */
+			.demo {
+			  opacity: 0.6;
+			}
+
+			.active,
+			.demo:hover {
+			  opacity: 1;
+			}
+
+			.title-item {
+				color: #444;
+				text-shadow: 
+					1px 0px 1px #ccc, 0px 1px 1px #eee, 
+					2px 1px 1px #ccc, 1px 2px 1px #eee,
+					3px 2px 1px #ccc, 2px 3px 1px #eee,
+					4px 3px 1px #ccc, 3px 4px 1px #eee,
+					5px 4px 1px #ccc, 4px 5px 1px #eee,
+					6px 5px 1px #ccc, 5px 6px 1px #eee,
+					7px 6px 1px #ccc;
+
+			}
+	 </style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="spkt_img.png" alt="logo spkt">
+		</div>
+		<div class="team">Nhóm 4 Chiều Thứ 4 Môn CTDL & GT</div>
+	</header>
+	<nav class="nav-horizontal navbar navbar-expand-sm  bg-warning col-12">
+	  
+	  <ul class="navbar-nav bg-warning" >
+	  	<li class="nav-item">
+	      <a class="nav-link text-dark" href="https://trananhminh910.github.io/CTDL-GT/?fbclid=IwAR0YJF9wmZAD7TY19L3y61wMmwGhYJN-41piudo6ZVD359RL2phIHT4x3QU#"><span class="fas fa-home"></span></a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link text-dark" href="#members">Thành Viên</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link text-dark" href="#works">Phân Công Việc</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link text-dark" href="#code">Thực Hiện</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link text-dark" href="#test">Test</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link text-dark" href="#comment">Nhận Xét</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link text-dark" href="#evaluate">Đánh Giá TV</a>
+	    </li>
+	  </ul>
+	</nav>
+	<span class="icon-right fas fa-arrow-alt-circle-right" title="Mở rộng"></span>
+	<div id="wrapper">
+		<nav class="vertical col-2">
+			<span class="icon-left fas fa-arrow-alt-circle-left" title="Thu gọn"></span>
+			
+			<ul>
+				<li class="list-ver"><a href="#members" class="parent-link">Thành Viên</a></li>
+				<li class="list-ver"><a href="#works" class="parent-link">Phân Công</a></li>
+				<li class="list-ver"><a href="#code" class="parent-link">Thực Hiện</a></li>
+				<li class="list-ver"><a href="#test" class="parent-link">Test</a>
+					<ul>
+						<li class="list-child"><a href="#test2" class="child-link">Test-2</a></li>
+						<li class="list-child"><a href="#test3" class="child-link">Test-3</a></li>
+						<li class="list-child"><a href="#test4" class="child-link">Test-4</a></li>
+						<li class="list-child"><a href="#test5" class="child-link">Test-5</a></li>
+						<li class="list-child"><a href="#test6" class="child-link">Test-6</a></li>
+						<li class="list-child"><a href="#test7" class="child-link">Test-7</a></li>
+						<li class="list-child"><a href="#test8" class="child-link">Test-8</a></li>
+						<li class="list-child"><a href="#test9" class="child-link">Test-9</a></li>
+					</ul>
+				</li>
+				<li class="list-ver"><a href="#comment" class="parent-link">Nhận Xét</a></li>
+				<li class="list-ver"><a href="#evaluate" class="parent-link">Đánh Giá</a></li>
+			</ul>
+		</nav>
+		<div class="content col-9">
+			<div id="members" class="members">
+				<div class="card" style="width:400px">
+				  <img class="card-img-top" src="minh.jpg" alt="Card image">
+				  <div class="card-body">
+				    <h4 class="card-title">Trần Anh Minh</h4>
+				    <p class="card-text">18T1</p>
+				    <a  class="profile btn btn-warning text-dark">Thông tin cá nhân</a>
+				  </div>
+				</div>
+				<div class="card" style="width:400px">
+				  <img class="card-img-top" src="khai.jpg" alt="Card image">
+				  <div class="card-body">
+				    <h4 class="card-title">Lê Sỹ Duy Khải</h4>
+				    <p class="card-text">18T4</p>
+				    <a  class="profile btn btn-warning text-dark">Thông tin cá nhân</a>
+				  </div>
+				</div>
+				<div class="card" style="width:400px">
+				  <img class="card-img-top" src="quynh.jpg" alt="Card image">
+				  <div class="card-body">
+				    <h4 class="card-title">Lê Đăng Quỳnh</h4>
+				    <p class="card-text">18SK1</p>
+				    <a  class="profile btn btn-warning text-dark">Thông tin cá nhân</a>
+				  </div>
+				</div>
+				<div class="card" style="width:400px">
+				  <img class="card-img-top" src="cuong.jpg" alt="Card image">
+				  <div class="card-body">
+				    <h4 class="card-title">Nguyễn Duy Cường</h4>
+				    <p class="card-text">18T4</p>
+				    <a class="profile btn btn-warning text-dark">Thông tin cá nhân</a>
+				  </div>
+				</div>
+				<div class="card" style="width:400px">
+				  <img class="card-img-top" src="trang.jpg" alt="Card image">
+				  <div class="card-body">
+				    <h4 class="card-title">Thu Trang</h4>
+				    <p class="card-text">18T3</p>
+				    <a class="profile btn btn-warning text-dark">Thông tin cá nhân</a>
+				  </div>
+				</div>
+			</div>
+			<div class="members-more">
+				<div class="member-more">
+					<div class="frame-member-more col-6">
+						<div class="frame-image-member-more col-5">
+							<img src="minh.jpg" width="100%" class="rounded-circle img-thumbnail">
+						</div>
+						<div class="content-member-more col-12">
+							<p><span class="bolder">Họ Tên:</span> Trần Anh Minh</p>
+							<p><span class="bolder">Lớp:</span> 18T1</p>
+							<p><span class="bolder">Mã sv:</span> 1811505310132</p>
+							<p><span class="bolder">Trường:</span> ĐH sư phạm kỹ thuật Đà Nẵng</p>
+						</div>
+						<span class="close-button" title="Nhấp để đóng">&times;</span>
+					</div>
+				</div>
+				<div class="member-more">
+					<div class="frame-member-more col-5">
+						<div class="frame-image-member-more col-6">
+							<img src="khai.jpg" width="100%" class="rounded-circle img-thumbnail">
+						</div>
+						<div class="content-member-more col-12">
+							<p><span class="bolder">Họ Tên:</span> Lê Sỹ Duy Khải</p>
+							<p><span class="bolder">Lớp:</span> 18T4 </p>
+							<p><span class="bolder">Mã sv:</span> 1811505310417</p>
+							<p><span class="bolder">Trường:</span> ĐH sư phạm kỹ thuật Đà Nẵng</p>
+						</div>
+						<span class="close-button" title="Nhấp để đóng">&times;</span>
+					</div>
+				</div>
+				<div class="member-more">
+					<div class="frame-member-more col-5">
+						<div class="frame-image-member-more col-6">
+							<img src="quynh.jpg" width="100%" class="rounded-circle img-thumbnail">
+						</div>
+						<div class="content-member-more col-12">
+							<p><span class="bolder">Họ Tên:</span> Lê Đăng Quỳnh</p>
+							<p><span class="bolder">Lớp:</span> 18SK1</p>
+							<p><span class="bolder">Mã sv:</span> 1811514110119</p>
+							<p><span class="bolder">Trường:</span> ĐH sư phạm kỹ thuật Đà Nẵng</p>
+						</div>
+						<span class="close-button" title="Nhấp để đóng">&times;</span>
+					</div>
+				</div>
+				<div class="member-more">
+					<div class="frame-member-more col-5">
+						<div class="frame-image-member-more col-6">
+							<img src="cuong.jpg" width="100%" class="rounded-circle img-thumbnail">
+						</div>
+						<div class="content-member-more col-12">
+							<p><span class="bolder">Họ Tên:</span> Nguyễn Duy Cường</p>
+							<p><span class="bolder">Lớp:</span> 18T4 </p>
+							<p><span class="bolder">Mã sv:</span> 1811505310405</p>
+							<p><span class="bolder">Trường:</span> ĐH sư phạm kỹ thuật Đà Nẵng</p>
+						</div>
+						<span class="close-button" title="Nhấp để đóng">&times;</span>
+					</div>
+				</div>
+				<div class="member-more">
+					<div class="frame-member-more col-6">
+						<div class="frame-image-member-more col-5">
+							<img src="trang.jpg" width="100%" class="rounded-circle img-thumbnail">
+						</div>
+						<div class="content-member-more col-12">
+							<p><span class="bolder">Họ Tên:</span> Thu Trang</p>
+							<p><span class="bolder">Lớp:</span> 18T3</p>
+							<p><span class="bolder">Mã sv:</span> 1811505310344</p>
+							<p><span class="bolder">Trường:</span> ĐH sư phạm kỹ thuật Đà Nẵng</p>
+						</div>
+						<span class="close-button" title="Nhấp để đóng">&times;</span>
+					</div>
+				</div>
+			</div>
+			<div class="back-top">
+				<span class="fas fa-caret-square-up" title="Quay lên đầu"></span>	
+			</div>
+			<br />
+			<br />
+			<br />
+			<!-- table to devide work -->
+			<div id="works" class="table-container">
+			  <h2 class="title-item">PHÂN CÔNG CÔNG VIỆC</h2>           
+			  <table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th>STT</th>
+			        <th>Họ Và Tên</th>
+			        <th>Phân công</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			        <td>1</td>
+			        <td>Trần Anh Minh</td>
+			        <td>Bài 11</td>
+			      </tr>
+			      <tr>
+			        <td>2</td>
+			        <td>Lê Sỹ Duy Khải</td>
+			        <td>Bài 10</td>
+			      </tr>
+			      <tr>
+			        <td>3</td>
+			        <td>Nguyễn Duy Cường</td>
+			        <td>Bài 8</td>
+			      </tr>
+			      <tr>
+			        <td>4</td>
+			        <td>Lê Đăng Quỳnh</td>
+			        <td>Bài 7</td>
+			      </tr>
+			      <tr>
+			        <td>5</td>
+			        <td>Thu Trang</td>
+			        <td>Bài 9</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+			<br />
+			<br />
+			<br />
+
+			<!-- Container for the image gallery -->
+			<div class="slideshow-container">
+
+			  <!-- Full-width images with number text -->
+			  <div class="mySlides">
+			    <div class="numbertext">1 / 6</div>
+			      <img src="slide1.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">2 / 6</div>
+			      <img src="slide2.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">3 / 6</div>
+			      <img src="slide3.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">4 / 6</div>
+			      <img src="slide4.jpg" style="width:100%">
+			  	</div>
+			  <div class="mySlides">
+			    <div class="numbertext">3 / 6</div>
+			      <img src="slide3.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">4 / 6</div>
+			      <img src="slide4.jpg" style="width:100%">
+			  </div>
+			  <div class="mySlides">
+			    <div class="numbertext">3 / 6</div>
+			      <img src="slide2.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">4 / 6</div>
+			      <img src="slide5.jpg style="width:100%">
+			  </div>
+
+
+			  <!-- Image text -->
+			  <div class="caption-container">
+			    <p id="caption"></p>
+			  </div>
+
+			  <!-- Thumbnail images -->
+			  <div class="row">
+			    <div class="column">
+			      <img class="demo cursor" src="slide1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Hình ảnh khi học nhóm">
+			    </div>
+			    <div class="column">
+			      <img class="demo cursor" src="slide2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Hình ảnh khi học nhóm">
+			    </div>
+			    <div class="column">
+			      <img class="demo cursor" src="slide3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Hình ảnh khi học nhóm">
+			    </div>
+			    <div class="column">
+			      <img class="demo cursor" src="slide4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Hình ảnh khi học nhóm">
+			    </div>
+			    <div class="column">
+			      <img class="demo cursor" src="slide2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Hình ảnh khi học nhóm">
+			    </div>
+			    <div class="column">
+			      <img class="demo cursor" src="slide5.jpg" style="width:100%" onclick="currentSlide(6)" alt="Hình ảnh khi học nhóm">
+			    </div>
+			  </div>
+			</div>
+			<br />
+			<br />
+			<br />
+			<h2 id="code" class="title-item">THỰC HIỆN</h2>
+
+			<div class="code-container">
+				<pre class="code">
+#include<<pre class="to-inline">stdio.h</pre>>
+struct SinhVien{
+	char maSV[15], tenSV[20], lop[15];
+	float dtb;
+};
+struct Node_BnTr{
+	SinhVien Data;
+	Node_BnTr *Node_TrL,*Node_TrR;
+};
+Node_BnTr *Add_Node(Node_BnTr *Tr, Node_BnTr *node)
+{
+	Node_BnTr *TMP,*tmp;
+	if(Tr==NULL)
+		Tr=node;
+	else
+	{
+		tmp=Tr;
+		while(tmp != NULL)
+		{
+			TMP = tmp ;
+			if(tmp->Data.dtb>node->Data.dtb)
+				tmp=tmp->Node_TrL;
+			else
+				tmp=tmp->Node_TrR;
+		}
+		if(TMP->Data.dtb>node->Data.dtb)
+			TMP->Node_TrL=node;
+		else
+			TMP->Node_TrR=node;
+	}
+	return Tr;
+}
+
+Node_BnTr *Input_Add(Node_BnTr *Tr)
+{
+	Node_BnTr *p;
+	int choose;
+	int i=1;
+	do
+	{
+	p= new Node_BnTr;
+	printf("\n Sinh Vien %d\n ",i);
+	printf("Nhap ma SV: ");
+	scanf("%s",&p->Data.maSV);
+	printf("Nhap ten sv: ");
+	fflush(stdin);
+	gets(p->Data.tenSV);
+	printf("Nhap lop sv: ");
+	scanf("%s",&p->Data.lop);
+	printf("Nhap dtb: ");
+	scanf("%f",&p->Data.dtb);
+	p->Node_TrL=NULL;
+	p->Node_TrR=NULL;
+	Tr=Add_Node(Tr,p);
+	i++;
+	printf("1.Nhap SV tiep theo \n");
+	printf("2.Quay lai Menu \n");
+	printf("Nhap so: ");
+	scanf("%d",&choose);
+	}
+	while(choose == 1);
+	return Tr;
+}
+Node_BnTr *Input(Node_BnTr *Tr)
+{
+	Tr=NULL;
+	Tr=Input_Add(Tr);
+	return Tr;
+}
+void Output(Node_BnTr *Tr)
+{
+	if(Tr!=NULL)
+	{
+		Output(Tr->Node_TrR);
+		Output(Tr->Node_TrL);
+		printf(" %15s | %20s | %15s | %2.2f \n",Tr->Data.maSV,Tr->Data.tenSV,Tr->Data.lop,Tr->Data.dtb);	
+		
+	}
+}
+int Count(Node_BnTr *Tr)
+{
+	if(Tr==NULL)
+		return 0;
+	if(Tr->Data.dtb>5.5)
+		return Count(Tr->Node_TrL)+Count(Tr->Node_TrR)+1;
+	else
+		return Count(Tr->Node_TrL)+Count(Tr->Node_TrR);
+}
+void Output_Condition(Node_BnTr *Tr)
+{
+	if(Tr!=NULL)
+	{
+		Output_Condition(Tr->Node_TrR);
+		Output_Condition(Tr->Node_TrL);
+		if(Tr->Data.dtb>5.5)
+			printf(" %15s | %20s | %15s | %2.2f \n",Tr->Data.maSV,Tr->Data.tenSV,Tr->Data.lop,Tr->Data.dtb);	
+		
+	}
+}
+
+Node_BnTr *Search(Node_BnTr *Tr)
+{
+	Node_BnTr *p;
+	if(Tr==NULL)
+		return NULL;
+	else
+	{
+		p=Tr;
+		while(p!=NULL && p->Data.dtb>5.5)
+		{
+			if(p->Data.dtb>5.5)
+				p=p->Node_TrL;
+			else
+				p=p->Node_TrR;
+		}
+	if(p!=NULL)
+		return p;
+	else
+		return NULL;
+	}
+}
+Node_BnTr *Delete_Node_Root(Node_BnTr *Tr,Node_BnTr *tmp)
+{
+	Node_BnTr *R;
+	if(tmp->Node_TrL!=NULL)
+	{
+		R=Tr->Node_TrR;
+		Tr= Tr->Node_TrL;
+		tmp->Node_TrL=NULL;
+		tmp->Node_TrR=NULL;
+		tmp=Tr;
+		while(tmp->Node_TrR!=NULL)
+			tmp=tmp->Node_TrR;
+		tmp->Node_TrR=R;
+	}
+	else
+	{
+		Tr=Tr->Node_TrR;
+		tmp->Node_TrR=NULL;
+	}
+	return Tr;
+}
+Node_BnTr *Delete_Node_Leaves(Node_BnTr *Tr,Node_BnTr *tmp)
+{
+	Node_BnTr *t;
+	t=Tr;
+	while(t->Node_TrR!=tmp && t->Node_TrL!=tmp)
+	{
+		if(t->Data.dtb>tmp->Data.dtb)
+			t=t->Node_TrL;
+		else
+			t=t->Node_TrR;
+	}
+	if(t->Node_TrR==tmp)
+		t->Node_TrR=NULL;
+	else
+		t->Node_TrL=NULL;
+	return Tr;
+}
+Node_BnTr *Delete_Node_Right(Node_BnTr *Tr,Node_BnTr *tmp)
+{
+	Node_BnTr *R,*t;
+	t=Tr;
+	while(t->Node_TrR!=tmp && t->Node_TrR!=tmp)
+		if(t->Data.dtb>tmp->Data.dtb)
+			t=t->Node_TrL;
+		else
+			t=t->Node_TrR;
+	R=tmp->Node_TrR;
+	if(t->Node_TrL==tmp)
+		t->Node_TrL=R;
+	else
+		t->Node_TrR=R;
+	tmp->Node_TrR=NULL;
+	tmp->Node_TrL=NULL;
+	return Tr;
+}
+Node_BnTr *Delete_Node_Left(Node_BnTr *Tr,Node_BnTr *tmp)
+{
+	Node_BnTr *L,*t;
+	t=Tr;	
+	while(t->Node_TrR!=tmp && t->Node_TrL!=tmp)
+		if(t->Data.dtb>tmp->Data.dtb)
+			t=t->Node_TrL;
+		else
+			t=t->Node_TrR;
+	L=tmp->Node_TrL;
+	if(t->Node_TrL==tmp)
+		t->Node_TrL=L;
+	else
+		t->Node_TrR=L;
+	tmp->Node_TrL=NULL;
+	tmp->Node_TrR=NULL;
+	return Tr;
+}
+Node_BnTr *Delete_Node_RL(Node_BnTr *Tr,Node_BnTr *tmp)
+{
+	Node_BnTr *t;
+	t=Tr;
+	while(t->Node_TrR!=tmp && t->Node_TrL!=tmp)
+		if(t->Data.dtb>tmp->Data.dtb)
+			t=t->Node_TrL;
+		else
+			t=t->Node_TrR;
+	if(t->Node_TrL==tmp)
+	{
+		t->Node_TrL=tmp->Node_TrL;
+		t=t->Node_TrL;
+	}
+	else
+	{
+		t->Node_TrR=tmp->Node_TrL;
+		t=t->Node_TrR;
+	}
+	while(t->Node_TrR!=NULL)
+		t=t->Node_TrR;
+	t->Node_TrR=tmp->Node_TrR;
+	tmp->Node_TrR=NULL;
+	tmp->Node_TrL=NULL;
+	return Tr;
+}
+Node_BnTr *Delete_Node(Node_BnTr *Tr)
+{
+	Node_BnTr *tmp;
+	while(Search(Tr)!=NULL)
+	{
+		tmp=Search(Tr);
+		if(tmp==Tr)
+			Tr=Delete_Node_Root(Tr,tmp);
+		else
+		{
+			if(tmp->Node_TrL==NULL && tmp->Node_TrR==NULL)
+				Tr=Delete_Node_Leaves(Tr,tmp);
+			else
+				if(tmp->Node_TrL!=NULL && tmp->Node_TrR!=NULL)
+					Tr=Delete_Node_RL(Tr,tmp);
+				else
+					if(tmp->Node_TrL!=NULL)
+						Tr=Delete_Node_Right(Tr,tmp);
+					else
+						Tr=Delete_Node_Left(Tr,tmp);
+		}
+		
+	}
+	return Tr;
+}
+int Student_Menu(){
+	int choose;
+	printf("=========== MENU ===========\n");
+	printf("Nhap so de chon chuc nang\n ");
+	printf("1.Tao danh sach sv\n ");
+	printf("2.Bo sung danh sach sv\n ");
+	printf("3.Xem danh sach sv\n ");
+	printf("4.Dem sinh vien co dtb tren 5.5\n ");
+	printf("5.In danh sach sv co dtb tren 5.5\n ");
+	printf("6.Xoa danh sach sv co dtb duoi 5.5\n ");
+	printf("7.Thoat\n ");
+	printf("----------------------------\n");
+	printf("Nhap lua chon cua ban: ");
+	scanf("%d",&choose);
+	
+	return choose;
+}
+main()
+{
+	Node_BnTr *Tree;
+	int choose;
+	do{
+		choose=Student_Menu();
+		switch(choose){
+			case 1:
+				Tree=Input(Tree);
+				break;
+			case 2:
+				Tree=Input_Add(Tree);
+				break;
+			case 3: 
+				Output(Tree);
+				break;
+			case 4:
+				printf("So sinh vien co dtb tren 5.5: %d\n",Count(Tree));
+				break;
+			case 5:
+				printf("Danh sach sinh vien co dtb tren 5.5: \n");
+				Output_Condition(Tree);
+				break;
+			case 6:
+				Tree=Delete_Node(Tree);
+				printf("danh sach sinh vien sau khi xoa dtb duoi 5.5: \n");
+				Output(Tree);
+				break;
+			default:
+				break;
+		}	
+	}while(choose!=7);
+}
+				</pre>
+			</div>
+			<br />
+			<br />
+			<br />
+			<div id="test" class="test-container">
+				<h2 class="title-item">KIỂM TRA</h2>
+				<div class="test">
+					<h4>1. Tạo danh sách sinh viên</h4>
+					<img src="test1.PNG" alt="test1">
+				</div>
+				<br />
+				<div class="test" id="test2">
+					<h4>2. Nhập sinh viên tiếp theo</h4>
+					<img src="test2.PNG" alt="test2">
+				</div>
+				<br>
+				<div class="test" id="test3">
+					<h4>3. Quay Lại và bổ sung sinh viên</h4>
+					<img src="test3.PNG" alt="test3">
+				</div>
+				<br>
+				<div class="test" id="test4">
+					<h4>4. Quay Lại và Hiện thị danh sách sinh viên</h4>
+					<img src="test4.PNG" alt="test4">
+				</div>
+				<br>
+				<div class="test" id="test5">
+					<h4>5. Đếm số sinh viên có điểm trung bình trên 5.5</h4>
+					<img src="test5.PNG" alt="test5">
+				</div>
+				<br>
+				<div class="test" id="test6">
+					<h4>6. In danh sách sinh viên có đtb trên 5.5</h4>
+					<img src="test6.PNG" alt="test6">
+				</div>
+				<br>
+				<div class="test" id="test7">
+					<h4>7. Xóa danh sách sinh viên có đtb dưới 5.5</h4>
+					<img src="test7.PNG" alt="test7">
+				</div>
+				<br>
+				<div class="test" id="test8">
+					<h4>8. Tạo lại danh sách mới và hiện thị</h4>
+					<img src="test8.PNG" alt="test8">
+				</div>
+				<br>
+				<div class="test" id="test9">
+					<h4>9. Dừng chương trình</h4>
+					<img src="test9.PNG" alt="test9">
+				</div>
+			</div>
+			<br />
+			<br />
+			<br />
+			<div id="comment" class="comment">
+				<h2 class="title-item">NHẬN XÉT & RÚT KINH NGHIỆM</h2>
+				<h5><span class="fas fa-book-open"></span> Nhận xét:</h5>
+				<p>- Ngày đầu tiên các thành viên họp lại và phân chia công việc cho mỗi người</p>
+				<p>-Sau khi hoàn thành xong, Họp nhóm để tập trung các hàm lại hoàn thiện bài tập nhóm</p>
+				<p>-Trong quá trình thực hiện nhóm hơi gặp vấn đề trong hàm xóa. Nhóm đã cùng nhau giải quyết vấn đề</p>
+				<p>-Tuy đã làm thành một bài hoàn chỉnh nhưng chưa thực hiện đúng yêu cầu làm Menu nên nhóm phải tập trung hoàn thiện</p>
+				<h5><span class="fas fa-book-open"></span> Rút kinh nghiệm:</h5>
+				<p>-Cần chuẩn bị kỹ công việc mình được phân công trước lúc đi học nhóm</p>
+				<p>-Nên lắng nghe kỹ yêu cầu bài tập để tối ưu hóa thời gian</p>
+			</div>
+			<br />
+			<br />
+			<br />
+			<div id="evaluate" class="evaluate">
+				<h2 class="title-item">ĐÁNH GIÁ MỖI CÁ NHÂN</h2>
+				<p>Vì công việc được phân chia đều, mỗi thành viên đều có ý thức tham gia họp nhóm đầy đủ, tích cực đóng góp ý kiến nên sẽ chấm theo thang điểm 10 như sau:</p>
+				<p>- Lê Sỹ Duy Khải: 9</p>
+				<p>- Trần Anh Minh: 9</p>
+				<p>- Lê Đăng Quỳnh: 9</p>
+				<p>- Nguyễn Duy Cường: 9</p>
+				<p>- Thu Trang: 9</p>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		$(".icon-left").click(function() {
+			$(".vertical").addClass("animated slideOutLeft");
+			setTimeout(function() {
+				$(".vertical").hide();
+				$(".icon-right").show();
+			},900);
+		});
+
+		$(".icon-right").click(function() {
+			$(".icon-right").hide();
+			$(".vertical").removeClass("animated slideOutLeft");
+			$(".vertical").show();
+			$(".vertical").addClass("animated slideInLeft");
+		});
+
+		$(".card").each(function() {
+			$(".card").mouseover(function() {
+				$(this).addClass("animated bounce");
+			})
+		});
+
+
+		for(let i=0; i< 5; i++) {
+			$(".profile").eq(i).click(function() {
+				$(".member-more").eq(i).css("display","flex");
+			})
+		};
+		
+		$(".close-button").click(function() {
+			$(".member-more").hide();
+		})
+
+		$(window).scroll(function() {
+		    if ($(this).scrollTop()) {
+		        $('.back-top').fadeIn();
+		    } else {
+		        $('.back-top').fadeOut();
+		    }
+		});
+		$(".back-top").click(function() {
+		    $("html, body").animate({scrollTop: 0}, 1000);
+		 });
+
+		// slide show
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+
+		
+		function autoSlide() {
+			setTimeout(function(){
+				$(".mySlides").hide();
+				$(".demo").removeClass("active");
+				$(".mySlides").eq(0).show();
+				$(".demo").eq(0).addClass("active");
+			},2000);
+			setTimeout(function(){
+				$(".mySlides").hide();
+				$(".demo").removeClass("active");
+				$(".mySlides").eq(1).show();
+				$(".demo").eq(1).addClass("active");
+			},4000);
+			setTimeout(function(){
+				$(".mySlides").hide();
+				$(".demo").removeClass("active");
+				$(".mySlides").eq(2).show();
+				$(".demo").eq(2).addClass("active");
+			},6000);
+			setTimeout(function(){
+				$(".mySlides").hide();
+				$(".demo").removeClass("active");
+				$(".mySlides").eq(3).show();
+				$(".demo").eq(3).addClass("active");
+			},8000);
+			setTimeout(function(){
+				$(".mySlides").hide();
+				$(".demo").removeClass("active");
+				$(".mySlides").eq(4).show();
+				$(".demo").eq(4).addClass("active");
+			},10000);
+			setTimeout(function(){
+				$(".mySlides").hide();
+				$(".demo").removeClass("active");
+				$(".mySlides").eq(5).show();
+				$(".demo").eq(5).addClass("active");
+			},12000);
+		}
+		autoSlide();
+		setInterval(() => {
+			autoSlide();
+		},12000);
+		
+
+	</script>
+</body>
+</html>
